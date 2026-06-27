@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — YouTube Thumbnail Grabber</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.7;
+      color: #222;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.2rem; margin-top: 2rem; margin-bottom: 0.5rem; }
+    p, ul { margin-bottom: 1rem; }
+    ul { padding-left: 1.5rem; }
+    li { margin-bottom: 0.3rem; }
+    strong { font-weight: 600; }
+    .date { color: #666; font-size: 0.9rem; margin-bottom: 2rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th {
+      background: #f5f5f5;
+      font-weight: 600;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 2rem 0;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+<p class="date"><strong>YouTube Thumbnail Grabber</strong> &mdash; Last updated: June 27, 2026</p>
+
+<h2>Overview</h2>
+<p>
+  YouTube Thumbnail Grabber does <strong>not</strong> collect, transmit, or share any personal data.
+  The extension operates entirely within your browser to fulfill its single purpose:
+  downloading YouTube video thumbnails.
+</p>
+
+<h2>Data Storage</h2>
+<p>All data is stored <strong>locally</strong> in your browser using <code>chrome.storage.local</code> and <code>chrome.storage.sync</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Storage Location</th>
+      <th>Purpose</th>
+      <th>Retention</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Download history (video IDs, filenames, timestamps)</td>
+      <td><code>chrome.storage.local</code></td>
+      <td>Display recent downloads in the side panel</td>
+      <td>Max 50 entries, auto-pruned</td>
+    </tr>
+    <tr>
+      <td>Download count</td>
+      <td><code>chrome.storage.local</code></td>
+      <td>Badge counter on the extension icon</td>
+      <td>Until user resets</td>
+    </tr>
+    <tr>
+      <td>Extension enabled/disabled state</td>
+      <td><code>chrome.storage.sync</code></td>
+      <td>Persist user preference across devices</td>
+      <td>Until user changes</td>
+    </tr>
+    <tr>
+      <td>Theme preference</td>
+      <td><code>chrome.storage.local</code></td>
+      <td>Remember light/dark mode choice</td>
+      <td>Until user changes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Network Requests</h2>
+<p>The extension makes outbound requests <strong>only</strong> when you explicitly trigger an action:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Destination</th>
+      <th>When It Happens</th>
+      <th>What Is Sent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>https://img.youtube.com/vi/{videoId}/{quality}.jpg</code></td>
+      <td>You click a download button or right-click &rarr; download</td>
+      <td>The YouTube video ID extracted from the page URL</td>
+    </tr>
+    <tr>
+      <td><code>https://www.youtube.com/*</code></td>
+      <td>You visit YouTube (content script runs)</td>
+      <td>None &mdash; reads the page DOM to detect video links</td>
+    </tr>
+  </tbody>
+</table>
+<p>No data is sent to any analytics service, tracking endpoint, third-party server, or the extension developer.</p>
+
+<h2>Data Sharing</h2>
+<ul>
+  <li><strong>No</strong> personal information is collected</li>
+  <li><strong>No</strong> data is sold to third parties</li>
+  <li><strong>No</strong> data is transferred for purposes unrelated to the extension's single purpose</li>
+  <li><strong>No</strong> data is used to determine creditworthiness or for lending purposes</li>
+</ul>
+
+<h2>Third-Party Services</h2>
+<p>The extension does <strong>not</strong> integrate any third-party analytics, crash reporting, or advertising SDKs.</p>
+
+<h2>Children's Privacy</h2>
+<p>
+  This extension does not knowingly collect any personal information from children under the age of 13.
+  If you believe a child has provided personal data, please contact us and we will delete it.
+</p>
+
+<h2>Changes to This Policy</h2>
+<p>
+  If this policy changes, the version number in the extension's manifest will be updated and
+  you will be notified through the Chrome Web Store update mechanism.
+</p>
+
+<h2>Contact</h2>
+<p>
+  For questions about this privacy policy, please open an issue at:
+  <br>
+  <a href="https://github.com/algal/youtube-thumbnail-grabber">https://github.com/algal/youtube-thumbnail-grabber</a>
+</p>
+
+<hr>
+<p style="font-size:0.85rem;color:#888;">
+  YouTube Thumbnail Grabber &mdash; An open-source Chrome extension.
+</p>
+
+</body>
+</html>
